@@ -7,7 +7,7 @@ public class IntroToEnums {
 	// The syntax for an enum is like this:
 	enum DataTypes {
 		// Every entry must be unique
-		INTEGER, DOUBLE, BOOLEAN, LONG, SHORT, BYTE
+		INTEGER, DOUBLE, BOOLEAN, LONG, SHORT, BYTE, Hello;
 	}
 	
 	// Look at the StatesOfMatter enum for another example
@@ -15,7 +15,9 @@ public class IntroToEnums {
 	public static void main(String[] args) {
 		// Enum objects can be created and initialized:
 		DataTypes data = DataTypes.INTEGER;
-		
+		DataTypes data3 = DataTypes.Hello;
+		String data3 = 'hello';
+		DataTypes data2 = DataTypes.INTEGER;
 		//They can then be used for comparison
 		if(data == DataTypes.INTEGER) {
 			System.out.println("INT");
