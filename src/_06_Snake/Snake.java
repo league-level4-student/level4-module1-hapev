@@ -9,7 +9,7 @@ public class Snake {
 	public static final int BODY_SIZE = 50;
 
 	private SnakeSegment head;
-	private ArrayList<SnakeSegment> snake;
+	public ArrayList<SnakeSegment> snake;
 
 	private Direction currentDirection;
 
@@ -80,8 +80,18 @@ public class Snake {
 		//   set canMove equal to false.
 		//   make sure the snake cannot completely reverse directions.
 		if (canMove) {
-			currentDirection = d;
-				
+			if (currentDirection!=Direction.LEFT&&d==Direction.RIGHT) {
+				currentDirection = d;
+			}
+			if (currentDirection!=Direction.UP&&d==Direction.DOWN) {
+				currentDirection = d;
+			}
+			if (currentDirection!=Direction.RIGHT&&d==Direction.LEFT) {
+				currentDirection = d;
+			}
+			if (currentDirection!=Direction.DOWN&&d==Direction.UP) {
+				currentDirection = d;
+			}
 		}
 	}
 
@@ -98,7 +108,7 @@ public class Snake {
 		//1. complete the method so it returns true if the head of the snake is outsize of the window
 		//   and false otherwise
 		
-		if (head.getLocation().x<0||head.getLocation().y<0||head.getLocation().x>750||head.getLocation().y>600) {
+		if (head.getLocation().x<0||head.getLocation().y<0||head.getLocation().x>15||head.getLocation().y>12) {
 		return true;
 		}
 		return false;
